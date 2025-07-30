@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Habit - Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+                <h1>Add New Habit</h1>
+            </div>
+        </header>
+
+        <main class="add-habit-main">
+            <form id="habit-form" class="habit-form" action="add_habit.php" method="POST">
+                <div class="form-section">
+                    <h2>Habit Details</h2>
+
+                    <div class="input-group">
+                        <label for="habit-title">Habit Name *</label>
+                        <input type="text" id="habit-title" name="title" placeholder="e.g., Drink 8 glasses of water" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="habit-description">Description</label>
+                        <textarea id="habit-description" name="description" placeholder="Why is this habit important to you?" rows="3"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="habit-frequency">Frequency *</label>
+                        <select id="habit-frequency" name="frequency" required>
+                            <option value="">Select frequency</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="weekly-day-group" style="display: none;">
+                        <label for="weekly-day">Which day of the week?</label>
+                        <select id="weekly-day" name="weekly_day">
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="habit-category">Category</label>
+                        <select id="habit-category" name="category">
+                            <option value="health">Health & Fitness</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="learning">Learning</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="social">Social</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Habit</button>
+                </div>
+
+                <div id="form-error" class="error-message"></div>
+            </form>
+        </main>
+    </div>
+
+    <script src="addHabit.js"></script>
+</body>
+</html>

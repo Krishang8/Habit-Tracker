@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>My Habits</h1>
+                <div class="header-actions">
+                    <span id="user-greeting">Welcome back!</span>
+                    <a href="habitLog.html" class="btn btn-primary">Habit Log</a>
+                    <a href="addHabit.html" class="btn btn-secondary">Add Habit</a>
+                    <a href="logout.php" class="btn btn-secondary">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h3>Total Habits</h3>
+                    <span id="total-habits" class="stat-number">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Today</h3>
+                    <span id="completed-today" class="stat-number">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Streak</h3>
+                    <span id="current-streak" class="stat-number">0</span>
+                </div>
+            </div>
+
+            <div class="habits-section">
+                <div class="section-header">
+                    <h2>Today's Habits</h2>
+                    <div class="date-display" id="current-date"></div>
+                </div>
+
+                <div id="habits-container" class="habits-grid">
+                    <!-- Habits will be loaded here dynamically -->
+                </div>
+
+                <div id="no-habits" class="no-habits" style="display: none;">
+                    <p>No habits yet! Start building better habits today.</p>
+                    <a href="addHabit.html" class="btn btn-primary">Add Your First Habit</a>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>Progress Overview</h2>
+                <div id="progress-chart" class="progress-chart">
+                    <!-- Progress visualization will go here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
